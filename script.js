@@ -11,9 +11,9 @@ const input = document.getElementById('initialsForm');
 const highscores = document.getElementById('highscores');
 const listScores = document.querySelector("#listScores");
 const badge = document.getElementById('HighScorebadge');
-const goBack = document.getElementById('goBack');
 const timeScore = document.getElementById('timeScore');
 const showScore = document.getElementById('showScore');
+const clear = document.getElementById('clear');
 
 let scores = [];
 var seconds = 75;
@@ -25,7 +25,6 @@ startButton.addEventListener('click', startQuiz);
 
 
 function startQuiz(event){
-  console.log(event);
  mainPage.classList.add('d-none');
  questionContainerEl.classList.remove('d-none');
  showQuestions();
@@ -79,8 +78,6 @@ function next(event){
 
     count++;
   }
-
-  console.log(event);
  
   if(count < questions.length){
     questionEl.innerText = questions[count].title;
@@ -91,15 +88,34 @@ function next(event){
   }
 
   if(count == questions.length){
-    clearInterval(time);
-    showScore.innerText = seconds; 
-    setTimeout(function(){
-      questionEl.classList.add('d-none');
-      buttonsDiv.classList.add('d-none');
-      input.classList.remove('d-none');
-      submitScore.addEventListener('click', createInput);
-    }, 700);
 
+    if(seconds <= 0){
+      clearInterval(time);
+      showScore.innerText = 0;
+      timeScore.innerText = 0;
+      setTimeout(function(){
+        questionEl.classList.add('d-none');
+        buttonsDiv.classList.add('d-none');
+        input.classList.remove('d-none');
+        submitScore.addEventListener('click', createInput);
+      }, 700);
+     
+    }
+    else{
+
+      clearInterval(time);
+     showScore.innerText = seconds; 
+     timeScore.innerText = seconds;
+    
+      setTimeout(function(){
+        questionEl.classList.add('d-none');
+        buttonsDiv.classList.add('d-none');
+        input.classList.remove('d-none');
+        submitScore.addEventListener('click', createInput);
+      }, 700);
+
+    }
+    
   }
 
 }
@@ -108,46 +124,82 @@ function next(event){
 function createInput(event){
 
   const data = JSON.parse(localStorage.getItem('items'));
-  console.log(data);
-  let scoreInput = document.getElementById('scoreInput').value;
-  scores.push(scoreInput);
 
-  for (var i = 0; i < scores.length; i++) {
-    var valueScore = scores[i];
-    var li = document.createElement("li");
-    li.textContent = valueScore + "-" + showScore.innerText;
-    li.setAttribute("class", "list-group-item list-group-item-info");
+  if(data != null){
+    let scoreInput = document.getElementById('scoreInput').value;
+    data.push(scoreInput + " - " + showScore.innerText);
 
-    listScores.appendChild(li);
-    
+    for (var i = 0; i < data.length; i++) {
+      var valueScore = data[i];
+      var li = document.createElement("li");
+      li.textContent = valueScore;
+      li.setAttribute("class", "list-group-item list-group-item-info");
+      listScores.appendChild(li);
+    }
+
+    localStorage.setItem('items', JSON.stringify(data));
+
   }
+  else{
+    let scoreInput = document.getElementById('scoreInput').value;
+    scores.push(scoreInput + " - " + showScore.innerText);
 
-  localStorage.setItem('items', JSON.stringify(scores));
+    for (var i = 0; i < scores.length; i++) {
+      var valueScore = scores[i];
+      var li = document.createElement("li");
+      li.textContent = valueScore;
+      li.setAttribute("class", "list-group-item list-group-item-info");
+
+      listScores.appendChild(li);
+      
+    }
+
+    localStorage.setItem('items', JSON.stringify(scores));
+
+  }
 
   input.classList.add('d-none');
   highscores.classList.remove('d-none');
-
   event.preventDefault();
 }
 
+clear.addEventListener('click', clearData);
 
+function clearData(){
+  let liEL = document.getElementsByTagName("li");
+  let count = liEL.length;
+  for(var i = 0; i < count; count--){
+    listScores.removeChild(liEL[i]);
+  }
+
+  localStorage.clear();
+}
 
 
 
 badge.addEventListener('click', toggleHighScores);
-goBack.addEventListener('click', startOver);
 
-function startOver(){
-  highscores.classList.add('d-none');
-  mainPage.classList.remove('d-none');
-
-}
 
 function toggleHighScores(){
   mainPage.classList.add('d-none');
   questionContainerEl.classList.add('d-none');
   highscores.classList.remove('d-none')
 
+  const data = JSON.parse(localStorage.getItem('items'));
+  if(data == null){
+    highscores.classList.remove('d-none')
+  }
+  else{
+    for (var i = 0; i < data.length; i++) {
+      var valueScore = data[i];
+      var li = document.createElement("li");
+      li.textContent = valueScore;
+      li.setAttribute("class", "list-group-item list-group-item-info");
+      listScores.appendChild(li);
+    }
+
+  }
+  
 }
 
 
