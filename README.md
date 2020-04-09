@@ -5,3 +5,6 @@ An aplication used to study simple questions about coding bootcamp.
 At the end you will get prompt to enter your initials and save your score.
 Play, learn and compete with friends and see who ends with the higher score.
 Good Luck!!!
+
+
+![](gif.gif)
