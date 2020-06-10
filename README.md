@@ -10,5 +10,7 @@ Good Luck!!!
 
 NEW LOOK!
 ![image](https://github.com/maidelrego/Code_Quiz/blob/master/screenshots/Capture.PNG)
+![image](https://github.com/maidelrego/Code_Quiz/blob/master/screenshots/Capture2.PNG)
+![image](https://github.com/maidelrego/Code_Quiz/blob/master/screenshots/Capture3.PNG)
 
 ![](gif.gif)
