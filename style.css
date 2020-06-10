@@ -4,6 +4,11 @@
     font-family: 'Permanent Marker', cursive;
 }
 
+.badge{
+    height: 40px;
+    padding-top:10px;
+    font-size: 20px;
+}
 
 .container{
     margin-top: 50px;
