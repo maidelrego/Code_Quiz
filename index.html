@@ -12,69 +12,73 @@
 </head>
 
 <body>
+
     <a href="#" class="badge badge-primary m-5" id="HighScorebadge">Highscores</a>
     <span class="badge badge-primary float-right m-5">Time: <span id="timeScore">0</span></span>
     <div class="container text-center">
-        <div class="row">
-            <div class="col-12 text-center mb-5" id="main-page">
-                <header>
-                    <h1 class="text-center" id="header">Code Quiz Challenge</h1>
-                </header>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-12 text-center mb-5" id="main-page">
+                    <header>
+                        <h1 class="text-center" id="header">Code Quiz Challenge</h1>
+                    </header>
 
-                <p class="text-center">
-                    Try to answer the following code-related questions within the time limit.Keep in mind that
-                    <br>incorrect answers will penalize your score/Time by 15 seconds.
-                </p>
-                <button class="btn btn-md btn-success" id="start-btn">Start Quiz</button>
-            </div>
-
-            <div class="col-6 d-none" id="question-container">
-
-                <p id="question"></p>
-
-                <div class="text-left" id="answer-btn">
-
-                    <button class="btn btn-info m-2"></button><br>
-                    <button class="btn btn-info m-2"></button><br>
-                    <button class="btn btn-info m-2"></button><br>
-                    <button class="btn btn-info m-2"></button><br>
-                    <div class="alert alert-success d-none" role="alert" id="answer-right">Correct</div>
-                    <div class="alert alert-danger d-none" role="alert" id="answer-wrong">Wrong</div>
-
+                    <p class="text-center">
+                        Try to answer the following code-related questions within the time limit.Keep in mind that
+                        <br>incorrect answers will penalize your score/Time by 15 seconds.
+                    </p>
+                    <button class="btn btn-md btn-success" id="start-btn">Start Quiz</button>
                 </div>
-            </div>
 
-        </div>
+                <div class="col-6 d-none" id="question-container">
 
-        <form>
-            <div class="d-none" id="initialsForm">
-                <p>Your final score is: <span id="showScore"></span></p>
-                <div class="input-group">
+                    <p id="question"></p>
 
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Enter Initials</span>
+                    <div class="text-left" id="answer-btn">
+
+                        <button class="btn btn-info m-2"></button><br>
+                        <button class="btn btn-info m-2"></button><br>
+                        <button class="btn btn-info m-2"></button><br>
+                        <button class="btn btn-info m-2"></button><br>
+                        <div class="alert alert-success d-none" role="alert" id="answer-right">Correct</div>
+                        <div class="alert alert-danger d-none" role="alert" id="answer-wrong">Wrong</div>
+
                     </div>
-
-                    <input type="text" class="form-control" id="scoreInput" />
-
-                    <div class="input-group-append">
-                        <span><button class="btn btn-success ml-2" id="submit">Submit</button></span>
-                    </div>
-
                 </div>
 
             </div>
 
-        </form>
 
-        <div class="highscores d-none" id="highscores">
-            <h3>Highscores</h3>
-            <ul class="list-group" id="listScores">
+            <form>
+                <div class="d-none" id="initialsForm">
+                    <p>Your final score is: <span id="showScore"></span></p>
+                    <div class="input-group">
 
-            </ul>
-            <a href="" class="btn btn-sm btn-info mr-5 mt-2">Go Back</a><span><button
-                    class="btn btn-sm btn-info ml-5 mt-2" id="clear">Clear</button></span>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Enter Initials</span>
+                        </div>
 
+                        <input type="text" class="form-control" id="scoreInput" />
+
+                        <div class="input-group-append">
+                            <span><button class="btn btn-success ml-2" id="submit">Submit</button></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+            <div class="highscores d-none" id="highscores">
+                <h3>Highscores</h3>
+                <ul class="list-group" id="listScores">
+
+                </ul>
+                <a href="" class="btn btn-sm btn-info mr-5 mt-2">Go Back</a><span><button
+                        class="btn btn-sm btn-info ml-5 mt-2" id="clear">Clear</button></span>
+
+            </div>
         </div>
 
     </div>
