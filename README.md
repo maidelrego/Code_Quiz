@@ -9,8 +9,6 @@ Play, learn and compete with friends and see who ends with the higher score.
 Good Luck!!!
 
 NEW LOOK!
-
-https://github.com/maidelrego/Code_Quiz/blob/master/screenshots/Capture.PNG
-
+![image](https://github.com/maidelrego/Code_Quiz/blob/master/screenshots/Capture.PNG)
 
 ![](gif.gif)
