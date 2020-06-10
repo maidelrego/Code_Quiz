@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
+
 <body>
     <a href="#" class="badge badge-info m-5" id="HighScorebadge">Highscores</a>
     <span class="badge badge-info float-right m-5">Time: <span id="timeScore">0</span></span>
@@ -18,12 +21,12 @@
                 <header>
                     <h1 class="text-center">Code Quiz Challenge</h1>
                 </header>
-            
+
                 <p class="text-center">
-                    Try to answer the following code-related questions within the time limit.Keep in mind that 
+                    Try to answer the following code-related questions within the time limit.Keep in mind that
                     <br>incorrect answers will penalize your score/Time by 15 seconds.
                 </p>
-                <button class="btn btn-md btn-success" id="start-btn">Start Quiz</button >
+                <button class="btn btn-md btn-success" id="start-btn">Start Quiz</button>
             </div>
 
             <div class="col-6 d-none" id="question-container">
@@ -41,52 +44,43 @@
 
                 </div>
             </div>
-              
+
         </div>
-
-        
-
 
         <form>
             <div class="d-none" id="initialsForm">
                 <p>Your final score is: <span id="showScore"></span></p>
                 <div class="input-group">
-                    
+
                     <div class="input-group-prepend">
                         <span class="input-group-text">Enter Initials</span>
                     </div>
-                    
-                    <input type="text" class="form-control" id="scoreInput"/>
-    
+
+                    <input type="text" class="form-control" id="scoreInput" />
+
                     <div class="input-group-append">
                         <span><button class="btn btn-success ml-2" id="submit">Submit</button></span>
                     </div>
-    
+
                 </div>
 
             </div>
-            
+
         </form>
-        
-        
-        
 
         <div class="highscores d-none" id="highscores">
             <h3>Highscores</h3>
             <ul class="list-group" id="listScores">
-            
+
             </ul>
-           <a href="" class="btn btn-sm btn-info mr-5 mt-2">Go Back</a><span><button class="btn btn-sm btn-info ml-5 mt-2" id="clear">Clear</button></span>
+            <a href="" class="btn btn-sm btn-info mr-5 mt-2">Go Back</a><span><button
+                    class="btn btn-sm btn-info ml-5 mt-2" id="clear">Clear</button></span>
 
         </div>
-       
-        
 
     </div>
 
-    
-    
-
     <script src="script.js"></script>
 </body>
+
 </html>
