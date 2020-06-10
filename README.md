@@ -8,5 +8,9 @@ At the end you will get prompt to enter your initials and save your score.
 Play, learn and compete with friends and see who ends with the higher score.
 Good Luck!!!
 
+NEW LOOK!
+
+https://github.com/maidelrego/Code_Quiz/blob/master/screenshots/Capture.PNG
+
 
 ![](gif.gif)
